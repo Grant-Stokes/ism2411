@@ -1,0 +1,119 @@
+#revenue,Margins and discount calculator 
+
+#exercise 1: 
+price=50
+quantity=12
+revenue=price*quantity
+#,.2f has 2 jobs -> thousands seperator and exactly 2 decimal places 
+print(f"Revenue: ${revenue:,.2f}")
+
+
+#Exercise 2: 
+cost=32
+price=50
+margin=(price-cost) / price #margin stays as a decimal
+print(f"Margin: {margin:.1%}") 
+
+
+#Exercise 3: Boolean Logic
+#Product A wins if margin_a > margin_b
+#Product A margin 30%, Product B margin (80-60)/80=25% 
+margin_a=0.3
+margin_b=(80-60)/80
+product_a_wins=margin_a>margin_b
+print(f"Product A wins: {product_a_wins}")
+
+#Exercise 4: Logic Combo
+
+is_premium = price>100 and margin>0.3
+
+price=150
+margin=0.35
+is_premium = price>100 and margin>0.3
+print(f"Is premium: {is_premium}")
+
+# Exercise 5: Division + Mod
+
+print(17/3) #5.666666666666667
+print(17//3) #3    
+print(17%3) #2 
+
+
+#Teacher Exercise 6:
+def calc_discount(price, rate):
+    return price * (1-rate)#gives up the answer
+revenue=1000
+discount_pct = 20
+discounted_rev = revenue * (1-discount_pct/100)
+
+print(discounted_rev)
+
+#Exercise 6:
+product_name=input("Enter product name: ")
+retail_price=float(input("Enter product price: "))
+product_quantity=int(input("Enter product quantity: "))
+unit_cost=float(input("Enter product unit cost: "))
+discount_percent=float(input("Enter discount percent: "))
+
+revenue=retail_price*product_quantity
+discount_amount=revenue*discount_percent / 100
+revenue_after_discount=revenue-discount_amount
+gross_margin=(retail_price-unit_cost)/retail_price
+net_profit=revenue_after_discount-(unit_cost*product_quantity)
+print("="*50)
+#output
+print(f"Product Name: {product_name}")
+print(f"Revenue After Discount: ${revenue_after_discount:,.2f}")
+print(f"Revenue Before Discount: ${revenue:,.2f}")
+print(f"Gross Margin: {gross_margin:.1%}")
+print(f"Net Profit: ${net_profit:,.2f}")
+
+#Exercise 7
+
+BOX_SIZE=24 #all upper case means constant, value should not change
+items_ordered=int(input("Number of items ordered: "))
+full_boxes=items_ordered//BOX_SIZE #Floor Div. is not abstract math
+loose_items=items_ordered%BOX_SIZE #modulo is not abstract math
+exact_fit=loose_items==0
+print(f"Full boxes: {full_boxes}")
+print(f"Loose items: {loose_items}")
+print(f"Exact fit: {exact_fit}")
+
+
+#Stretch Goal A
+retail_price=50
+cost=32
+fixed_costs=1000
+contribution=retail_price-cost
+whole_units=int(fixed_costs//contribution)
+print(f"whole units: {whole_units}")
+
+
+#Stretch Goal B
+retail_price=50
+cost=24
+quantity=22
+total_profit=retail_price-cost*quantity 
+total_profit=(retail_price-cost)*quantity
+#wrong process 2
+revenue=1000
+discount_pct = 20
+discounted_rev = revenue * 1-discount_pct/100
+discounted_rev = revenue * (1-discount_pct/100)
+#wrong process 3
+margin_b=80-60/80
+margin_b=(80-60)/80
+
+#wrong process 4
+entry=10
+exit_price=15
+shares=100
+profit=entry-exit_price*shares
+profit=(exit_price-entry)*shares
+
+#wrong process 5
+entry=19
+exit_price=7
+shares=100
+loss=entry-exit_price*shares
+loss=(entry-exit_price)*shares
